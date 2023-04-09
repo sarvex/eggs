@@ -1,17 +1,17 @@
 {
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
-        "version": "PTDL_v1",
+        "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2021-12-13T10:34:52+11:00",
+    "exported_at": "2023-04-09T19:21:20+02:00",
     "name": "Dynamica",
     "author": "sebastian.pietschner@gmail.com",
     "description": "The dynamica discord bot",
     "features": null,
-    "images": [
-        "ghcr.io\/parkervcp\/yolks:nodejs_16"
-    ],
+    "docker_images": {
+        "ghcr.io\/parkervcp\/yolks:nodejs_16": "ghcr.io\/parkervcp\/yolks:nodejs_16"
+    },
     "file_denylist": [],
     "startup": "yarn deploy && yarn prisma migrate deploy && yarn start",
     "config": {
@@ -22,7 +22,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "apt-get update\r\napt-get install openssl git -y -qq\r\ncd \/mnt\/server\r\nif [[ -d .git\/ ]]; then\r\n    git pull\r\nelse\r\n    git clone https:\/\/github.com\/dynamicabot\/dynamica.git .;\r\nfi;\r\nyarn install --frozen-lockfile",
+            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt -y install git openssl\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nif [[ -d .git\/ ]]; then\r\n    git pull\r\nelse\r\n    git clone https:\/\/github.com\/dynamicabot\/dynamica.git .;\r\nfi;\r\n\r\nyarn install --frozen-lockfile\r\n\r\n\r\n## install end\r\necho \"-----------------------------------------\"\r\necho \"Installation completed...\"\r\necho \"-----------------------------------------\"",
             "container": "node:lts-buster-slim",
             "entrypoint": "bash"
         }
@@ -35,7 +35,8 @@
             "default_value": "file:\/home\/container\/dynamica\/db.sqlite",
             "user_viewable": true,
             "user_editable": false,
-            "rules": "required|string"
+            "rules": "required|string",
+            "field_type": "text"
         },
         {
             "name": "Token",
@@ -44,7 +45,8 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|string"
+            "rules": "required|string",
+            "field_type": "text"
         },
         {
             "name": "Client ID",
@@ -53,7 +55,8 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|string|size:18"
+            "rules": "required|string|size:18",
+            "field_type": "text"
         }
     ]
 }
