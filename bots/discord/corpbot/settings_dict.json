@@ -1,4 +1,6 @@
 {
+    "prefix": "your_custom_prefix_here",
     "token": "your_token_here",
-    "prefix": "your_custom_prefix_here"
+    "weather": "your_weather_api_key_here",
+    "currency": "your_currency_api_key_here"
 }
