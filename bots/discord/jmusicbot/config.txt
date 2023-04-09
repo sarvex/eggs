@@ -51,7 +51,7 @@ status = ONLINE
 // "Playing" status. Note that this will ONLY work if the bot is playing music on ONE guild;
 // if the bot is playing on multiple guilds, this will not work.
 
-songinstatus = false
+songinstatus=false
 
 
 // If you set this, the bot will also use this prefix in addition to
@@ -112,7 +112,7 @@ playlistsfolder = "Playlists"
 // By default, the bot will DM the owner if the bot is running and a new version of the bot
 // becomes available. Set this to false to disable this feature.
 
-updatealerts = true
+updatealerts=true
 
 
 // Changing this changes the lyrics provider
