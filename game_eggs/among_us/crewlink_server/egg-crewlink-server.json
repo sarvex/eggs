@@ -1,14 +1,18 @@
 {
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
-        "version": "PTDL_v1"
+        "version": "PTDL_v2",
+        "update_url": null
     },
-    "exported_at": "2020-12-16T20:11:55+01:00",
+    "exported_at": "2023-04-10T11:56:56+02:00",
     "name": "Crewlink server",
     "author": "panel@oxtroit.com",
     "description": "An egg designed to allow support for Proximity Chat in Among Us using CrewLink Server",
     "features": null,
-    "image": "quay.io\/parkervcp\/pterodactyl-images:debian_nodejs-12",
+    "docker_images": {
+        "ghcr.io\/parkervcp\/yolks:nodejs_12": "ghcr.io\/parkervcp\/yolks:nodejs_12"
+    },
+    "file_denylist": [],
     "startup": "yarn start",
     "config": {
         "files": "{}",
@@ -31,7 +35,8 @@
             "default_value": "master",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|string|max:20"
+            "rules": "required|string|max:20",
+            "field_type": "text"
         },
         {
             "name": "Domain",
@@ -40,7 +45,8 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "nullable|string|max:50"
+            "rules": "nullable|string|max:50",
+            "field_type": "text"
         },
         {
             "name": "Server name",
@@ -49,7 +55,8 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|string|max:75"
+            "rules": "required|string|max:75",
+            "field_type": "text"
         },
         {
             "name": "Use HTTPS",
@@ -58,7 +65,8 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "nullable|string|max:20"
+            "rules": "nullable|string|max:20",
+            "field_type": "text"
         },
         {
             "name": "Path to SSL",
@@ -67,7 +75,8 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "nullable|string|max:250"
+            "rules": "nullable|string|max:250",
+            "field_type": "text"
         },
         {
             "name": "Port",
@@ -76,7 +85,8 @@
             "default_value": "",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "required|string|max:20"
+            "rules": "required|string|max:20",
+            "field_type": "text"
         }
     ]
 }
